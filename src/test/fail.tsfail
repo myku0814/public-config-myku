@@ -1,0 +1,31 @@
+// noImplicitAny
+export function greet(name) {
+  return `Hello, ${name}`;
+}
+
+// strictNullChecks
+export const maybeNull: string = null;
+
+
+// noUnusedParameters
+export function say(message: string) {
+  console.log("Hi");
+}
+
+// noImplicitReturns
+export function computeScore(score: number): number {
+  if (score > 60) {
+    return score;
+  }
+}
+
+// exactOptionalPropertyTypes
+export type MyUser = {
+  name: string;
+  age?: number;
+};
+
+export const user: MyUser = {
+  name: "myku",
+  age: undefined,
+};

@@ -1,0 +1,62 @@
+{
+  "name": "@myku0814/public-config-myku",
+  "version": "0.0.0",
+  "private": true,
+  "type": "commonjs",
+  "description": "Shared ESLint configuration for myku projects",
+  "keywords": [
+    "myku",
+    "eslint"
+  ],
+  "author": "myku",
+  "license": "Apache-2.0",
+  "packageManager": "pnpm@10.8.0",
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=10"
+  },
+  "preinstall": "npx -y only-allow pnpm",
+  "files": ["./dist"],
+  "exports": {
+    "./tsconfig/recommend": "./dist/src/typescript/tsconfig.base.json",
+    "./eslint/patch": "./dist/src/eslint/eslint.config.patch.cjs",
+    "./eslint/node-ts": "./dist/src/eslint/eslint.config.node-ts.cjs",
+    "./eslint/vue-ts": "./dist/src/eslint/eslint.config.vue-ts.cjs",
+    "./prettier/node": "./dist/src/prettier/prettier.config.node.cjs",
+    "./prettier/vue": "./dist/src/prettier/prettier.config.vue.cjs",
+    "./tailwind/recommend": "./dist/src/tailwind/tailwind.config.cjs",
+    "./postcss/recommend": "./dist/src/tailwind/postcss.config.cjs"
+  },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com"
+  },
+  "scripts": {
+    "build": "tsc --project ./tsconfig.json",
+    "build:verbose": "tsc --project ./tsconfig.json --listFiles",
+    "build:config": "tsc --project ./tsconfig.json --showConfig > ./dist/.myku/ts-config.txt",
+    "build:diag": "tsc --project ./tsconfig.json --diagnostics > ./dist/.myku/ts-diagnostics.txt",
+    "lint:verbose": "eslint . --debug --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "lint:check": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore",
+    "lint:fix": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "format:check": "prettier --check src/ --ignore-path .gitignore",
+    "format:fix": "prettier --write src/ --ignore-path .gitignore"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.5",
+    "@rushstack/eslint-patch": "^1.8.0",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "@vue/eslint-config-typescript": "^13.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-cypress": "^2.15.1",
+    "eslint-plugin-tailwindcss": "^3.15.1",
+    "eslint-plugin-vue": "^9.23.0",
+    "prettier-plugin-tailwindcss": "^0.5.14"
+  },
+  "peerDependencies": {
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "typescript": "~5.4.0"
+  }
+}
