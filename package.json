@@ -41,7 +41,7 @@
     "format:check": "prettier --check src/ --ignore-path .gitignore",
     "format:fix": "prettier --write src/ --ignore-path .gitignore"
   },
-  "devDependencies": {
+  "dependencies": {
     "@types/node": "^20.12.5",
     "@rushstack/eslint-patch": "^1.8.0",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
