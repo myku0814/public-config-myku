@@ -1,6 +1,6 @@
 {
   "name": "@myku0814/public-config-myku",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": false,
   "type": "commonjs",
   "description": "Shared ESLint configuration for myku projects",
