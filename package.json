@@ -1,6 +1,6 @@
 {
   "name": "@myku0814/public-config-myku",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "private": false,
   "type": "commonjs",
   "description": "Shared ESLint configuration for myku projects",
@@ -28,7 +28,8 @@
     "./postcss/recommend": "./dist/src/tailwind/postcss.config.cjs"
   },
   "publishConfig": {
-    "registry":"https://registry.npmjs.org"
+    "registry": "https://npm.pkg.github.com",
+    "bak_registry":"https://registry.npmjs.org"
   },
   "scripts": {
     "build": "tsc --project ./tsconfig.json",
